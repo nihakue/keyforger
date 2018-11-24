@@ -4,10 +4,12 @@ import Keys from './Keys';
 import Amber from './Amber';
 import './Playmat.css';
 
-export default function Playmat() {
-  return (<section className="playmat">
-    <Chain />
-    <Amber />
-    <Keys />
-  </section>)
+export default function Playmat({ reverse = false }) {
+  return (
+    <section className={`playmat${reverse ? ' reverse' : ''}`}>
+      <Chain />
+      <Amber />
+      <Keys />
+    </section>
+  );
 }

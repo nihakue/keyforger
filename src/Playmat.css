@@ -1,3 +1,7 @@
 .playmat {
   display: grid;
 }
+
+.reverse {
+  transform: rotate(180deg) scaleX(-1);
+}

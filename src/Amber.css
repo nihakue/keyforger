@@ -1,0 +1,15 @@
+.amber {
+  background-color: teal;
+  display: flex;
+}
+
+.amber-button-container {
+  display: flex;
+  height: 100px;
+  flex: 1;
+}
+
+.amber-button-container button {
+  flex: 1;
+  height: 100%;
+}

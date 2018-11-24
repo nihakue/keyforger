@@ -1,0 +1,25 @@
+.key {
+  flex: 1;
+  height: 100px;
+  opacity: .5;
+}
+
+.keys .forged {
+  opacity: 1;
+}
+
+.keys {
+  display: flex;
+}
+
+.keys .blue {
+  background-color: blue;
+}
+
+.keys .red {
+  background-color: red;
+}
+
+.keys .green {
+  background-color: green;
+}

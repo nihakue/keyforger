@@ -1,0 +1,9 @@
+.steal {
+  width: 100%;
+  height: 100px;
+  display: flex;
+}
+
+.steal button {
+  flex: 1;
+}

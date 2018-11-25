@@ -3,6 +3,10 @@
   display: flex;
 }
 
+.amber button {
+  padding: 0;
+}
+
 .amber > * {
   flex: 1;
 }

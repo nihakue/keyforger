@@ -1,5 +1,11 @@
 .playmat {
-  display: grid;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.playmat > * {
+  flex: 1;
 }
 
 .reverse {

@@ -1,8 +1,14 @@
-html,
-body {
+.game-board {
   height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.game-board {
-  height: 100%;
+.game-board > * {
+  flex: 10;
+}
+
+.game-board > .dmz {
+  flex: 1;
 }

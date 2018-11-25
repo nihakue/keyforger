@@ -1,6 +1,6 @@
 import React from 'react';
 import Playmat from './Playmat';
-import DMZ from './DMZ';
+import './GameBoard.css';
 
 export default function GameBoard() {
   return (

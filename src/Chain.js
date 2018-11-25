@@ -12,21 +12,19 @@ export default function Chain({ startingChain = 0 }) {
   const [chainLevel, setChain] = useState(startingChain);
   return (
     <section className="chain">
-      <h3>Card Draw Modifier</h3>
+      <button
+        className="chain-down"
+        onClick={() => setChain(Math.max(0, chainLevel - 1))}
+      >
+        -
+      </button>
+      Card Draw Modifier
       <Stat>{chainDraw(chainLevel)}</Stat>
-      <h3>Chain Level</h3>
+      Chain Level
       <Stat>{chainLevel}</Stat>
-      <div className="chain-button-container">
-        <button
-          className="chain-down"
-          onClick={() => setChain(Math.max(0, chainLevel - 1))}
-        >
-          -
-        </button>
-        <button className="chain-up" onClick={() => setChain(chainLevel + 1)}>
-          +
-        </button>
-      </div>
+      <button className="chain-up" onClick={() => setChain(chainLevel + 1)}>
+        +
+      </button>
     </section>
   );
 }

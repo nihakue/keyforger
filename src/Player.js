@@ -15,8 +15,8 @@ export default function Player({ reverse = false, player }) {
         value={{ dispatch: playerDispatch, ...state[player] }}
       >
         <Steal />
-        <Amber />
         <Keys />
+        <Amber />
         <Chain />
       </PlayContext.Provider>
     </section>

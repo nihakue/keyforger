@@ -1,15 +1,9 @@
 .amber {
-  background-color: teal;
+  background-color: orange;
   display: flex;
+  height: 20vh;
 }
 
-.amber-button-container {
-  display: flex;
-  height: 100px;
+.amber > * {
   flex: 1;
-}
-
-.amber-button-container button {
-  flex: 1;
-  height: 100%;
 }

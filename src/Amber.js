@@ -8,12 +8,9 @@ export default function Amber() {
   const { amber, dispatch } = playState;
   return (
     <section className="amber">
-      <h2>Amber</h2>
+      <button onClick={() => dispatch(changeAmber(-1))}>-</button>
       <Stat>{amber}</Stat>
-      <div className="amber-button-container">
-        <button onClick={() => dispatch(changeAmber(-1))}>-</button>
-        <button onClick={() => dispatch(changeAmber(1))}>+</button>
-      </div>
+      <button onClick={() => dispatch(changeAmber(1))}>+</button>
     </section>
   );
 }

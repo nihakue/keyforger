@@ -12,3 +12,10 @@
 .game-board > .dmz {
   flex: 1;
 }
+
+button {
+  padding: 0;
+  margin: 0;
+  border-style: none;
+  font-size: 4rem;
+}

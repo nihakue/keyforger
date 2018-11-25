@@ -1,13 +1,8 @@
 .chain > * {
   flex: 1;
-  text-align: center;
-}
-
-.chain button {
-  width: 33%;
 }
 
 .chain {
-  background-color: grey;
+  background-color: lightgrey;
   display: flex;
 }

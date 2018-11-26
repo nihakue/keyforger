@@ -1,3 +1,11 @@
+# keyforget
+
+Keyforge game state tracker progressive web app
+
+This is still very much a work in progress, but feel free to use it and provide feedback!
+
+# Development
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

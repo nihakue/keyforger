@@ -61,6 +61,8 @@ const playReducer = produce((draft, action) => {
         player.forgedKeys.push(color);
       }
       return;
+    default:
+      return;
   }
 });
 

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { PlayContext, forgeKeyPressed } from './Playmat';
+import { PlayContext, forgeKeyPressed, KEY_COST } from './Playmat';
 import './Keys.css';
 
 const KEY_COLORS = Object.freeze({
@@ -19,12 +19,15 @@ export default function Keys() {
 }
 
 function Key({ color }) {
-  const { dispatch, forgedKeys } = useContext(PlayContext);
+  const { dispatch, amber, forgedKeys } = useContext(PlayContext);
   const forged = forgedKeys.indexOf(color) !== -1;
+  const ready = !forged && amber >= KEY_COST;
   return (
     <div
       onClick={() => dispatch(forgeKeyPressed(color))}
-      className={`key${forged ? ' forged' : ''} ${color.toLowerCase()}`}
+      className={`key${ready ? ' ready' : ''}${
+        forged ? ' forged' : ''
+      } ${color.toLowerCase()}`}
     />
   );
 }

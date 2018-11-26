@@ -10,7 +10,7 @@ export default function Amber() {
   const { amber, dispatch } = playState;
   const ready = amber >= KEY_COST;
   return (
-    <section className={`amber${ready ? ' ready' : ''}`}>
+    <section className="amber">
       <button onClick={() => dispatch(changeAmber(-1))}>-</button>
       <Stat>{amber}</Stat>
       <button onClick={() => dispatch(changeAmber(1))}>+</button>

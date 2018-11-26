@@ -20,7 +20,7 @@ export default function Chain({ startingChain = 0 }) {
       </button>
       Card Draw Modifier
       <Stat>{chainDraw(chainLevel)}</Stat>
-      Chain Level
+      Chain Tracker
       <Stat>{chainLevel}</Stat>
       <button className="chain-up" onClick={() => setChain(chainLevel + 1)}>
         +

@@ -5,7 +5,7 @@ import DMZ from './DMZ';
 
 import './Playmat.css';
 
-const KEY_COST = 6;
+export const KEY_COST = 6;
 
 export const CHANGE_AMBER = 'CHANGE_AMBER';
 export const FORGE_KEY_PRESSED = 'FORGE_KEY_PRESSED';

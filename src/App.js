@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import GameBoard from './GameBoard';
+import Update from './Update';
 
-class App extends Component {
-  render() {
-    return <GameBoard />;
-  }
+export default function App() {
+  return (
+    <div>
+      <GameBoard />
+      <Update />
+    </div>
+  );
 }
-
-export default App;

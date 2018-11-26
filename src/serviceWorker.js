@@ -92,6 +92,16 @@ function registerValidSW(swUrl, config) {
           }
         };
       };
+      let preventDevToolsReloadLoop;
+      navigator.serviceWorker.addEventListener('controllerchange', function(
+        event
+      ) {
+        // Ensure refresh is only called once.
+        // This works around a bug in "force update on reload".
+        if (preventDevToolsReloadLoop) return;
+        preventDevToolsReloadLoop = true;
+        window.location.reload();
+      });
     })
     .catch(error => {
       console.error('Error during service worker registration:', error);

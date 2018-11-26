@@ -6,10 +6,12 @@ import DMZ from './DMZ';
 import './Playmat.css';
 
 export const KEY_COST = 6;
+const SINGLE_PLAYER_MODE_FEATURE_FLAG = 'singlePlayerMode';
 
 export const CHANGE_AMBER = 'CHANGE_AMBER';
 export const FORGE_KEY_PRESSED = 'FORGE_KEY_PRESSED';
 export const STEAL_PRESSED = 'STEAL_PRESSED';
+export const MODE_PRESSED = 'MODE_PRESSED';
 
 export const changeAmber = amount => ({
   type: CHANGE_AMBER,
@@ -30,6 +32,9 @@ const playReducer = produce((draft, action) => {
   const player = draft[playerNumber];
 
   switch (action.type) {
+    case MODE_PRESSED:
+      draft.singlePlayerMode = !draft.singlePlayerMode;
+      return;
     case STEAL_PRESSED:
       const otherPlayerNumber = playerNumber === 1 ? 0 : 1;
       console.log(`${playerNumber} stole from ${otherPlayerNumber}`);
@@ -66,7 +71,10 @@ const DEFAULT_PLAYER_STATE = {
 
 const DEFAULT_STATE = {
   0: DEFAULT_PLAYER_STATE,
-  1: DEFAULT_PLAYER_STATE
+  1: DEFAULT_PLAYER_STATE,
+  singlePlayerMode: window.location.search.includes(
+    SINGLE_PLAYER_MODE_FEATURE_FLAG
+  )
 };
 
 export const PlayContext = React.createContext({
@@ -78,8 +86,8 @@ export default function Playmat() {
   const [state, dispatch] = useReducer(playReducer, DEFAULT_STATE);
   return (
     <PlayContext.Provider value={{ dispatch, ...state }}>
-      <Player reverse player={0} />
-      <DMZ />
+      {!state.singlePlayerMode && <Player reverse player={0} />}
+      {!state.singlePlayerMode && <DMZ />}
       <Player player={1} />
     </PlayContext.Provider>
   );

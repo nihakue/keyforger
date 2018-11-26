@@ -1,6 +1,7 @@
 .key {
   flex: 1;
   opacity: 0.2;
+  cursor: pointer;
 }
 
 .keys .forged {

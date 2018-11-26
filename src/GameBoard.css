@@ -13,9 +13,25 @@
   flex: 1;
 }
 
+.game-board:not(.tab-user) button:focus,
+.game-board:not(.tab-user) input:focus,
+.game-board:not(.tab-user) select:focus,
+.game-board:not(.tab-user) textarea:focus {
+  outline: none;
+}
+
 button {
   padding: 0;
   margin: 0;
-  border-style: none;
+  border: none;
+  cursor: pointer;
   font-size: 4rem;
+  overflow: hidden;
+}
+
+button:active {
+  background-color: #f0f8ff;
+}
+
+.ripples {
 }

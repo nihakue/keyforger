@@ -18,10 +18,9 @@ export default function Chain({ startingChain = 0 }) {
       >
         -
       </button>
-      Card Draw Modifier
-      <Stat>{chainDraw(chainLevel)}</Stat>
-      Chain Tracker
-      <Stat>{chainLevel}</Stat>
+
+      <Stat>{`${chainLevel} (${chainDraw(chainLevel)})`}</Stat>
+
       <button className="chain-up" onClick={() => setChain(chainLevel + 1)}>
         +
       </button>

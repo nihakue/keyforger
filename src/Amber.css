@@ -1,22 +1,33 @@
 .amber {
-  background-color: orange;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4px;
+}
+
+.current-amber {
   display: flex;
-  flex: 1;
-}
-
-.amber button {
-  padding: 0;
-}
-
-.amber > * {
-  flex: 1;
+  justify-content: center;
+  background-color: rgb(255, 193, 77);
 }
 
 .amber-controls {
-  flex: 1;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 4px;
 }
 
 .amber-controls button {
   flex: 1;
+  background-color: rgb(255, 193, 77);
+}
+
+.key-cost-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 4px;
+}
+
+.key-cost-controls button {
+  flex: 1;
+  background-color: rgb(255, 193, 77);
 }

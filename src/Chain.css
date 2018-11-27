@@ -1,8 +1,13 @@
-.chain > * {
-  flex: 1;
+.chain {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4px;
 }
 
-.chain {
+.chain .stat {
   background-color: lightgrey;
-  display: flex;
+}
+
+.chain button {
+  background-color: lightgrey;
 }

@@ -36,7 +36,7 @@ button {
 }
 
 button:active {
-  background-color: #f0f8ff;
+  filter: brightness(95%);
 }
 
 .ripples {

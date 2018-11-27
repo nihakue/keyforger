@@ -10,7 +10,11 @@ export default function Player({ reverse = false, player }) {
   const playerDispatch = action => dispatch({ ...action, player });
 
   return (
-    <section className={`playmat${reverse ? ' reverse' : ''}`}>
+    <section
+      className={`playmat${reverse ? ' reverse' : ''}${
+        singlePlayerMode ? ' single-player-mode' : ''
+      }`}
+    >
       <PlayContext.Provider
         value={{ dispatch: playerDispatch, singlePlayerMode, ...state[player] }}
       >

@@ -13,6 +13,10 @@ export const FORGE_KEY_PRESSED = 'FORGE_KEY_PRESSED';
 export const STEAL_PRESSED = 'STEAL_PRESSED';
 export const MODE_PRESSED = 'MODE_PRESSED';
 
+export const modePressed = () => ({
+  type: MODE_PRESSED
+});
+
 export const changeAmber = amount => ({
   type: CHANGE_AMBER,
   payload: amount
@@ -99,7 +103,7 @@ export default function Playmat() {
   return (
     <PlayContext.Provider value={{ dispatch, ...state }}>
       {!state.singlePlayerMode && <Player reverse player={0} />}
-      {!state.singlePlayerMode && <DMZ />}
+      <DMZ />
       <Player player={1} />
     </PlayContext.Provider>
   );

@@ -5,14 +5,6 @@
   flex-direction: column;
 }
 
-.game-board > * {
-  flex: 10;
-}
-
-.game-board > .dmz {
-  flex: 1;
-}
-
 .game-board:not(.tab-user) button:focus,
 .game-board:not(.tab-user) input:focus,
 .game-board:not(.tab-user) select:focus,

@@ -39,7 +39,7 @@ const playReducer = produce((draft, action) => {
   switch (action.type) {
     case CHANGE_KEY_COST:
       const amount = action.payload;
-      player.keyCost += amount;
+      player.keyCost = Math.max(0, player.keyCost + amount);
       return;
     case MODE_PRESSED:
       draft.singlePlayerMode = !draft.singlePlayerMode;

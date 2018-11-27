@@ -14,8 +14,8 @@ export default function Player({ reverse = false, player }) {
       <PlayContext.Provider
         value={{ dispatch: playerDispatch, singlePlayerMode, ...state[player] }}
       >
-        <Keys />
         <Steal />
+        <Keys />
         <section style={{ display: 'flex' }}>
           <AmberControls />
           <Amber />

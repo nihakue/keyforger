@@ -5,11 +5,19 @@ import './Amber.css';
 
 export default function Amber() {
   const playState = useContext(PlayContext);
-  const { amber, dispatch } = playState;
+  const { amber, keyCost } = playState;
   return (
     <section className="amber">
+      <Stat>{`${amber} / ${keyCost}`}</Stat>
+    </section>
+  );
+}
+
+export function AmberControls() {
+  const { dispatch } = useContext(PlayContext);
+  return (
+    <section className="amber-controls">
       <button onClick={() => dispatch(changeAmber(-1))}>-</button>
-      <Stat>{amber}</Stat>
       <button onClick={() => dispatch(changeAmber(1))}>+</button>
     </section>
   );

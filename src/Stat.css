@@ -1,5 +1,5 @@
 .stat {
-  font-size: 45px;
+  font-size: 10vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,4 +7,10 @@
 
 .stat > * {
   flex: 1;
+}
+
+@media screen and (min-width: 700px) {
+  .stat {
+    font-size: 68.9px;
+  }
 }

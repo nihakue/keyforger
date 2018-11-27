@@ -5,16 +5,21 @@ import DMZ from './DMZ';
 
 import './Playmat.css';
 
-export const KEY_COST = 6;
 const SINGLE_PLAYER_MODE_FEATURE_FLAG = 'singlePlayerMode';
 
 export const CHANGE_AMBER = 'CHANGE_AMBER';
+export const CHANGE_KEY_COST = 'CHANGE_KEY_COST';
 export const FORGE_KEY_PRESSED = 'FORGE_KEY_PRESSED';
 export const STEAL_PRESSED = 'STEAL_PRESSED';
 export const MODE_PRESSED = 'MODE_PRESSED';
 
 export const changeAmber = amount => ({
   type: CHANGE_AMBER,
+  payload: amount
+});
+
+export const changeKeyCost = amount => ({
+  type: CHANGE_KEY_COST,
   payload: amount
 });
 
@@ -32,6 +37,10 @@ const playReducer = produce((draft, action) => {
   const player = draft[playerNumber];
 
   switch (action.type) {
+    case CHANGE_KEY_COST:
+      const amount = action.payload;
+      player.keyCost += amount;
+      return;
     case MODE_PRESSED:
       draft.singlePlayerMode = !draft.singlePlayerMode;
       return;
@@ -52,12 +61,12 @@ const playReducer = produce((draft, action) => {
       const alreadyForged = player.forgedKeys.indexOf(color);
       if (alreadyForged !== -1) {
         delete player.forgedKeys[alreadyForged];
-        player.amber += KEY_COST;
+        player.amber += player.keyCost;
       } else {
-        if (player.amber < KEY_COST) {
+        if (player.amber < player.keyCost) {
           return;
         }
-        player.amber -= KEY_COST;
+        player.amber -= player.keyCost;
         player.forgedKeys.push(color);
       }
       return;
@@ -68,6 +77,7 @@ const playReducer = produce((draft, action) => {
 
 const DEFAULT_PLAYER_STATE = {
   amber: 0,
+  keyCost: 6,
   forgedKeys: []
 };
 

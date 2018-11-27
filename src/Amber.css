@@ -1,6 +1,7 @@
 .amber {
   background-color: orange;
   display: flex;
+  flex: 1;
 }
 
 .amber button {
@@ -8,5 +9,14 @@
 }
 
 .amber > * {
+  flex: 1;
+}
+
+.amber-controls {
+  flex: 1;
+  display: flex;
+}
+
+.amber-controls button {
   flex: 1;
 }

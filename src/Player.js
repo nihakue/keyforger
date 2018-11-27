@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Chain from './Chain';
-import Keys from './Keys';
-import Amber from './Amber';
+import Keys, { KeyCostControls } from './Keys';
+import Amber, { AmberControls } from './Amber';
 import Steal from './Steal';
 import { PlayContext } from './Playmat';
 
@@ -14,9 +14,13 @@ export default function Player({ reverse = false, player }) {
       <PlayContext.Provider
         value={{ dispatch: playerDispatch, singlePlayerMode, ...state[player] }}
       >
-        <Steal />
         <Keys />
-        <Amber />
+        <Steal />
+        <section style={{ display: 'flex' }}>
+          <AmberControls />
+          <Amber />
+          <KeyCostControls />
+        </section>
         <Chain />
       </PlayContext.Provider>
     </section>

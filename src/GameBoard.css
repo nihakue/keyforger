@@ -25,8 +25,14 @@ button {
   margin: 0;
   border: none;
   cursor: pointer;
-  font-size: 4rem;
+  font-size: 8vw;
   overflow: hidden;
+}
+
+@media screen and (min-width: 800px) {
+  button {
+    font-size: 63.68px;
+  }
 }
 
 button:active {

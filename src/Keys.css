@@ -40,3 +40,12 @@
 .keys .green {
   background-color: green;
 }
+
+.key-cost-controls {
+  flex: 1;
+  display: flex;
+}
+
+.key-cost-controls button {
+  flex: 1;
+}
